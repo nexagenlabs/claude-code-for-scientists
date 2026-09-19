@@ -52,6 +52,9 @@ table{border-collapse:collapse;width:100%;margin:1.1rem 0;font-size:.93rem;
 th,td{text-align:left;padding:.45rem .7rem;border-bottom:1px solid var(--rule);
       vertical-align:top}
 th{font-weight:600;white-space:nowrap}
+@media(max-width:34rem){
+  th,td{padding:.4rem .45rem;font-size:.88rem}
+  th{white-space:normal}}
 .lede{color:var(--dim);font-size:1.02rem}
 .note{border-left:3px solid var(--rule);padding:.1rem 0 .1rem 1rem;
       color:var(--dim);font-size:.95rem}
@@ -138,7 +141,8 @@ def index_page(chapters, builds):
     for ch in sorted(k for k in by_ch if k is not None):
         names = ", ".join(f'<code>{esc(b["slug"])}</code>' for b in by_ch[ch])
         rows.append(f"<tr><td>{ch}</td><td>{names}</td>"
-                    f'<td><code>/ch{ch:02d}</code></td></tr>')
+                    f'<td><a href="/ch{ch:02d}">'
+                    f'<code>/ch{ch:02d}</code></a></td></tr>')
     table = ("<table><thead><tr><th>Chapter</th><th>Build</th>"
              "<th>Printed address</th></tr></thead><tbody>"
              + "".join(rows) + "</tbody></table>")
@@ -151,7 +155,8 @@ def index_page(chapters, builds):
                 f'<li><strong>{esc(b["slug"])}</strong>'
                 + (f' &mdash; {title}' if title else "")
                 + f'<br>{esc(b["desc"])} '
-                + f'<code>{DOMAIN}/ch{ch:02d}</code></li>')
+                + f'<a href="/ch{ch:02d}"><code>{DOMAIN}/ch{ch:02d}</code></a>'
+                + '</li>')
     listing = "<ul>" + "".join(items) + "</ul>"
 
     missing = sorted(set(chapters) - {b["chapter"] for b in builds})
