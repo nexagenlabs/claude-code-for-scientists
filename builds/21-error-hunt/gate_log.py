@@ -10,8 +10,17 @@ import sys
 
 EXPECTED_CLASSES = {"arithmetic", "incomplete", "unverified", "silent",
                     "tautology", "overclaim", "false_alarm"}
+# Chapter 21 prints this count. If the file shrinks, the printed number
+# and the file behind it have drifted, which is the whole subject of the
+# chapter. Without this the gate passed on a truncated log.
+EXPECTED_ROWS = 23
+
 rows = list(csv.DictReader(open("error_log.csv", encoding="utf-8")))
 fails = []
+
+if len(rows) != EXPECTED_ROWS:
+    fails.append(f"Chapter 21 reports {EXPECTED_ROWS} defects, "
+                 f"the log holds {len(rows)}")
 
 # Every row is complete.
 for i, r in enumerate(rows, start=2):
