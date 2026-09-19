@@ -1,0 +1,52 @@
+$ python threshold.py
+true cell count: 80
+
+ threshold   objects found     error
+      0.15              50       -30
+      0.25              61       -19
+      0.35              65       -15
+      0.45              67       -13
+      0.55              69       -11
+      0.70              52       -28
+      0.85              35       -45
+
+$ python illumination.py
+one fixed threshold of 0.55, true count 80
+
+                        evenly lit  vignetted  corrected
+whole field                     69         33         69
+centre of the field             24         22         24
+
+The centre barely moves. The whole field halves. A cell that
+sits near the edge of the image is simply not counted.
+
+$ python qpcr.py
+delta Ct control   5.70   delta Ct treated   3.80   delta delta Ct  -1.90
+
+  assumed efficiency   fold change   error vs 100%
+               100%          3.73            0.0%
+                95%          3.56           -4.7%
+                90%          3.39           -9.3%
+                85%          3.22          -13.8%
+
+The 100 per cent row is what 2^-ddCt gives you. Every other row
+is the same Ct values read with a primer pair that amplifies
+slightly less than perfectly, which is the normal case.
+
+Standard curve slopes and the efficiency they imply:
+  slope -3.10   efficiency 110.2%   OUT OF RANGE
+  slope -3.32   efficiency 100.1%   acceptable
+  slope -3.58   efficiency 90.3%   acceptable
+  slope -3.90   efficiency 80.5%   OUT OF RANGE
+
+$ python edge_effect.py
+lowest-dose wells: edge 117.9 per cent, interior 99.9 per cent, difference +18.0
+
+true IC50 is 42.0 uM
+all wells, edge included           IC50   43.0 uM   top  107.0
+interior wells only                IC50   42.7 uM   top   99.9
+
+Layout B: one dose per row, so the lowest and highest doses
+sit entirely on the edge rows.
+all wells, edge included           IC50   34.9 uM   top  112.2
+interior wells only                IC50   39.9 uM   top  100.4

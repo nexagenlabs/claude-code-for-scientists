@@ -1,0 +1,4 @@
+column,meaning,unit
+well,plate position,
+od595,absorbance at 595 nm,AU
+collected,date collected,ISO 8601

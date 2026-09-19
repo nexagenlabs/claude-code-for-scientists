@@ -1,0 +1,19 @@
+$ python make_fixture.py
+fixture written: plate_export_raw.xlsx
+data rows written: 32
+
+$ python naive_read.py
+columns: ['SpectraCount MX-200 :: Endpoint Absorbance', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4']
+shape: (41, 7)
+rows with a usable reading: 30
+mean of whatever survived: 0.943
+
+$ python clean_plate.py
+raw rows read            35
+footer rows removed      3
+wells found              32
+carried through          30
+excluded with a reason   2
+
+$ python tests/gate_plate.py
+All 7 gates passed. 30 wells clean, 2 excluded with reasons.

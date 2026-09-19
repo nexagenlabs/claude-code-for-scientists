@@ -1,0 +1,30 @@
+# Environments
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Build scaffolding, not for readers
+.build/
+PROGRESS.md
+HANDOVER.md
+NOTES_FOR_HUMAN.md
+TASK.md
+verify_repo.py
+source/
+
+# Generated outputs that any reader can regenerate
+builds/**/plate_viability.csv
+builds/**/_tmp_*
+builds/**/field.npy
+builds/**/figure_*.png
+
+# Generated site. Rebuild with: python site/build_site.py
+site/dist/
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

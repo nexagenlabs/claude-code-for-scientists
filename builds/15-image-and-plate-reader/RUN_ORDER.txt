@@ -1,0 +1,4 @@
+threshold.py      writes field.npy
+illumination.py   reads field.npy
+qpcr.py           self-contained
+edge_effect.py    self-contained

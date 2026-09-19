@@ -1,0 +1,4 @@
+make_figure.py    writes figure_2a.png
+gate_figure.py    reads it
+errorbars.py      self-contained
+colourcheck.py    self-contained

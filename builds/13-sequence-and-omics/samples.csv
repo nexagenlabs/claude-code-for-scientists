@@ -1,0 +1,7 @@
+sample,group,batch,library_size
+ctrl_1,control,run1,3861302
+ctrl_2,control,run1,3496946
+ctrl_3,control,run1,4627946
+treat_1,treated,run2,11838333
+treat_2,treated,run2,4473108
+treat_3,treated,run2,4007507

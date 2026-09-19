@@ -1,0 +1,3 @@
+normalise.py      writes plate_viability.csv
+gates.py          reads it
+inject.py         reruns both with seeded faults

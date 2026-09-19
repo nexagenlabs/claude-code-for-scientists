@@ -1,0 +1,25 @@
+$ python make_corpus.py
+500 records, 56 relevant (11.2 per cent prevalence)
+
+$ python screen.py
+500 records in, 57 included, 0 failures
+
+$ python screen.py --loose
+500 records in, 78 included, 0 failures
+
+$ python agreement.py
+Against the gold set
+strict criteria    sensitivity 0.839   specificity 0.977   missed 9   extra to read 10
+loose criteria     sensitivity 1.000   specificity 0.950   missed 0   extra to read 22
+
+Between the two screens
+  raw agreement      0.958
+  Cohen's kappa      0.821
+  prevalence index   0.730
+  PABAK              0.916
+
+Same raw agreement, three prevalences
+  prevalence   raw agreement   Cohen's kappa
+        30%           0.960           0.905
+        11%           0.960           0.796
+         2%           0.960          -0.020

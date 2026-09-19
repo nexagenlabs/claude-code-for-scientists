@@ -1,0 +1,11 @@
+$ python read_along.py
+1. the whole table           (30, 6)
+2. one column of it         [0.0626, 1.1897, 1.7363]
+3. a yes or no for each row [True, True, True]
+4. were they all yes?       True
+
+a row selection: 27 of 30 rows
+
+an f-string: 'expected 32 wells, found 30'
+
+what a failed assert prints: expected 32 wells, found 30

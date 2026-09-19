@@ -1,0 +1,19 @@
+23 defects, in 16 of the 22 chapters
+
+by class
+  arithmetic      7
+  incomplete      5
+  unverified      4
+  silent          3
+  tautology       2
+  overclaim       1
+  false_alarm     1
+
+by what caught it
+  audit            10
+  recomputation     7
+  seeded fault      3
+  running it        2
+  documentation     1
+
+caught by rereading the text: 0

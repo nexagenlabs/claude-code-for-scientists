@@ -1,0 +1,6 @@
+make_counts.py    writes counts.csv, samples.csv, truth.csv
+de.py             reads counts.csv
+filtering.py      reads counts.csv
+annotation.py     reads counts.csv
+confound.py       self-contained
+read_accounting.py reads read_summary.csv, shipped

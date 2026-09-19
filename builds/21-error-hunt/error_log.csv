@@ -1,0 +1,24 @@
+chapter,class,description,caught_by
+0,incomplete,"Table of regex pieces omitted two used in the next block",audit
+4,tautology,"Gate asserted 96 wells and no blanks, which cannot both hold",running it
+5,incomplete,"Abridged CLAUDE.md presented as the whole file",audit
+7,tautology,"Invariant gate recomputed the quantity it was checking",seeded fault
+9,incomplete,"Abridged criteria file presented as the committed one",audit
+10,arithmetic,"Benjamini-Hochberg minimum taken in the wrong direction",recomputation
+11,arithmetic,"Interval width ratio stated as five, actually 6.6",recomputation
+12,arithmetic,"SD to SEM ratio stated as three, actually two",recomputation
+13,incomplete,"Code block numbering skipped 13.3",audit
+14,arithmetic,"Centroid distance stated as ten angstroms, actually 11.5",recomputation
+16,arithmetic,"Collision rate stated as one in three, actually 39.7 per cent",recomputation
+17,silent,"Line break defeated a pattern, so a claim was never checked",seeded fault
+17,incomplete,"Output block omitted one of five lines",audit
+18,silent,"Word boundary before a slash, so the check never fired",seeded fault
+18,arithmetic,"Deposit described as three files, actually four",audit
+19,overclaim,"Text said the check resolved pointers; it did not",audit
+19,false_alarm,"Inflected verb read as a missing claim",running it
+20,silent,"All nine gates exit 1, which does not block a hook",documentation
+1,unverified,"Experience stated as two years, CV says less",audit
+5,unverified,"Time to write a file invented",audit
+7,unverified,"Script length stated as forty lines, actually 56",audit
+11,unverified,"Median survival reported as 58 days, file says 60",recomputation
+20,arithmetic,"Gate count stated as eight, actually nine",recomputation

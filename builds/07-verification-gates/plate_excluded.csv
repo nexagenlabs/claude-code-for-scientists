@@ -1,0 +1,3 @@
+well,sample_id,treatment,conc_uM,od595,flag,time_h
+B4,U87_2,TMZ,100,,above instrument range,48
+C1,U87_3,blank,0,,below instrument range,48

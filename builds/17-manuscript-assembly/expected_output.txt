@@ -1,0 +1,28 @@
+$ python check_numbers.py
+  ic50_tmz               manuscript         42.3   results         42.3   ok
+  ic50_tmz_ci_low        manuscript           37   results           37   ok
+  ic50_tmz_ci_high       manuscript         47.6   results         47.6   ok
+  viability_tmz50        manuscript         92.1   results         92.7   MISMATCH
+  n_experiments          manuscript            3   results            4   MISMATCH
+  genes_tested           manuscript       19,996   results       19,996   ok
+  genes_significant      manuscript           12   results            0   MISMATCH
+
+[number]   viability_tmz50: manuscript says 92.1, results file says 92.7
+[number]   n_experiments: manuscript says 3, results file says 4
+[number]   genes_significant: manuscript says 12, results file says 0
+(exit status 1)
+
+$ python citations.py
+  ok          10.1038/533452a
+              Nature 2016
+  ok          10.1038/483531a
+              Nature 2012
+  ok          10.7554/eLife.67995
+              eLife 2021
+  ok          10.1016/0895-4356(93)90018-v
+              Journal of Clinical Epidemiology 1993
+  UNRESOLVED  10.1038/s41586-024-07231-4
+              cited as: Kumar et al. Nature 628, 811 to 818 (2024)
+
+5 references, 1 problem(s).
+(exit status 1)

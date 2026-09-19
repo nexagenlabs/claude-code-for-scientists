@@ -1,0 +1,16 @@
+$ python claim_check.py
+id  evidence   language  claim
+C1  measured   hedged    TMZ reduces U87MG viability with an IC50 of 
+C2  measured   hedged    NanA potentiates TMZ at sub-toxic concentrat
+C3  inferred   strong    The combination acts through DNA methyltrans
+C4  cited      hedged    Reproducibility failures are common in precl
+C5  proposed   strong    Our approach will translate to patient-deriv
+
+  [claim] C2: evidence 'results.csv:combo_index' does not resolve to anything
+  [claim] C3: inferred evidence, but the sentence asserts it. Rewrite:
+        "Our data demonstrate that the combination acts through inhibition of DNA methyltransferase, esta"
+  [claim] C5: proposed evidence, but the sentence asserts it. Rewrite:
+        "This approach will translate directly to patient-derived xenografts, proving the clinical releva"
+
+3 problem(s) across 5 claims.
+(exit status 1)

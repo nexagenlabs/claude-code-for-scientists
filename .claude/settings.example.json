@@ -1,0 +1,44 @@
+{
+  "_comment_1": "READ THIS BEFORE COPYING. Field names and event names in the hooks section are version-dependent. They move between Claude Code releases. Check them against TOOLING.md, which records the version this repository was verified against, before you rely on anything here.",
+
+  "_comment_2": "The permissions block below is the shape used by the run that assembled this repository and it works. The hooks block is NOT filled in, deliberately. See _hooks_TODO.",
+
+  "_comment_3": "Copy this file to settings.json in the same directory, remove the keys beginning with an underscore, and fill in the hooks wiring.",
+
+  "permissions": {
+    "deny": [
+      "Write(./data/raw/**)",
+      "Edit(./data/raw/**)",
+      "Bash(git push:*)",
+      "Bash(git reset:*)",
+      "Bash(git rebase:*)",
+      "Bash(git filter-branch:*)",
+      "Bash(git rm:*)",
+      "Bash(sudo:*)"
+    ],
+    "allow": [
+      "Read(./**)",
+      "Write(./**)",
+      "Edit(./**)",
+      "Bash(python:*)",
+      "Bash(py:*)",
+      "Bash(pip:*)",
+      "Bash(git:*)"
+    ]
+  },
+
+  "_hooks_TODO": "TODO(human): wire the two hooks below into a hooks block. The structure of that block, the key that holds it, and the way a matcher is expressed could not be verified on the machine that assembled this repository, and this file will not carry a guess. Check the current form against the Claude Code documentation, record it in TOOLING.md, then write it here.",
+
+  "_hooks_verified_pieces": {
+    "_note": "These three things ARE verified and can be used as written.",
+
+    "event_name": "PreToolUse",
+    "_event_name_source": "hooks/protect_raw.py emits this name in its own output, and it is the event the Chapter 20 hook is written for. Verified on 2026-09-18 against Claude Code 2.1.276.",
+
+    "raw_data_hook_command": "python hooks/protect_raw.py",
+    "_raw_data_hook_behaviour": "Reads a JSON payload on standard input. Prints a deny decision and exits 0 when the payload is a write into data/raw. Prints nothing and exits 0 otherwise. Verified on 2026-09-18 against three payloads; see hooks/README.md.",
+
+    "gate_wrapper_command": "python tools/as_hook.py python <the gate script>",
+    "_gate_wrapper_behaviour": "Runs the gate, passes its output through, and exits 2 when the gate fails so that the hook blocks. Exits 0 when the gate passes. The working directory must be the build directory, because every gate reads its inputs from the current directory. See docs/gates.md for the command for each gate."
+  }
+}

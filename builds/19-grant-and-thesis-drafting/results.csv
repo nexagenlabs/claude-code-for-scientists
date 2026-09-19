@@ -1,0 +1,8 @@
+key,value,unit
+ic50_tmz,42.3,uM
+ic50_tmz_ci_low,37.0,uM
+ic50_tmz_ci_high,47.6,uM
+n_experiments,4,plates
+viability_tmz50,92.7,percent
+genes_tested,19996,genes
+genes_significant,0,genes

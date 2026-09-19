@@ -1,0 +1,29 @@
+{
+ "10.1038/533452a": {
+  "found": true,
+  "title": "Is there a reproducibility crisis?",
+  "journal": "Nature",
+  "year": 2016
+ },
+ "10.1038/483531a": {
+  "found": true,
+  "title": "Raise standards for preclinical cancer research",
+  "journal": "Nature",
+  "year": 2012
+ },
+ "10.7554/eLife.67995": {
+  "found": true,
+  "title": "Challenges for assessing replicability in preclinical cancer biology",
+  "journal": "eLife",
+  "year": 2021
+ },
+ "10.1016/0895-4356(93)90018-v": {
+  "found": true,
+  "title": "Bias, prevalence and kappa",
+  "journal": "Journal of Clinical Epidemiology",
+  "year": 1993
+ },
+ "10.1038/s41586-024-07231-4": {
+  "found": false
+ }
+}

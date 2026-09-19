@@ -1,0 +1,15 @@
+$ python normalise_two_ways.py
+mean blank OD      0.0612
+mean DMSO OD       1.3098   (blank corrected 1.2486)
+
+treatment  conc_uM  viability_A  viability_B  difference
+     NanA        1         61.0         59.1         1.9
+     NanA        5         91.3         90.8         0.5
+      TMZ       50         75.5         74.3         1.2
+      TMZ      100         85.7         85.0         0.7
+ TMZ+NanA       50         81.9         81.0         0.9
+ TMZ+NanA      100         62.6         60.8         1.8
+
+blank OD 0.0612   largest disagreement between methods:   3.5 percentage points
+blank OD 0.2000   largest disagreement between methods:  12.9 percentage points
+blank OD 0.3500   largest disagreement between methods:  26.1 percentage points

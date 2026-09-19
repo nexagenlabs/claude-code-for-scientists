@@ -1,0 +1,22 @@
+$ python make_figure.py
+wrote figure_2a.png at 89 x 65 mm, 300 dpi, error bars are 95 per cent CI on n = 4 experiments
+
+$ python tests/gate_figure.py
+figure_2a.png   1051 x 767 px   300 dpi   89.0 mm wide
+All figure gates passed.
+
+$ python errorbars.py
+treatment     mean      SD     SEM  95% CI half
+DMSO         99.44    8.34    4.17        13.27
+TMZ_100      86.41    8.04    4.02        12.80
+TMZ_50       92.68    8.40    4.20        13.37
+
+n = 4 independent experiments per condition
+The three bars differ by a factor of 3.18 between SEM and CI alone.
+
+$ python colourcheck.py
+CIE76 colour distance. Below about 20, two colours read as one.
+
+red and green              normal vision  119.8   red-green vision    7.3
+blue and orange            normal vision  122.0   red-green vision  118.1
+blue and grey              normal vision   39.8   red-green vision   43.4

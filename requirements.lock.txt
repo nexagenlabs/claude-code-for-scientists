@@ -1,0 +1,23 @@
+# Exact environment the builds in this repository were verified against.
+# Generated with pip freeze on 2026-09-18, from the virtual environment
+# described in TOOLING.md section 3. Python 3.12.10.
+#
+# Use this when you need to reproduce the recorded output exactly.
+# Use requirements.txt when you just want the code to run.
+contourpy==1.4.0
+cycler==0.12.1
+et_xmlfile==2.0.0
+fonttools==4.65.0
+kiwisolver==1.5.1
+matplotlib==3.11.2
+numpy==2.5.3
+openpyxl==3.1.5
+packaging==26.3
+pandas==3.0.6
+pillow==12.3.0
+pyparsing==3.3.2
+python-dateutil==2.9.0.post0
+PyYAML==6.0.3
+scipy==1.18.1
+six==1.17.0
+tzdata==2026.4

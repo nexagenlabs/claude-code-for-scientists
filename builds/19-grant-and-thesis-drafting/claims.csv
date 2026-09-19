@@ -1,0 +1,6 @@
+claim_id,claim,evidence_type,evidence
+C1,TMZ reduces U87MG viability with an IC50 of 42.3 uM,measured,results.csv:ic50_tmz
+C2,NanA potentiates TMZ at sub-toxic concentrations,measured,results.csv:combo_index
+C3,The combination acts through DNA methyltransferase inhibition,inferred,
+C4,Reproducibility failures are common in preclinical cancer biology,cited,10.7554/eLife.67995
+C5,Our approach will translate to patient-derived xenografts,proposed,

@@ -1,0 +1,18 @@
+$ python normalise.py
+wrote plate_viability.csv, blank 0.0612, denominator 1.2486
+
+$ python gates.py
+All gates passed.
+
+$ python inject.py
+A  two wells silently dropped
+      [conservation] 32 wells expected, 30 accounted for
+
+B  readings in the wrong unit
+      [range] OD outside 0.0 to 4.0: max seen 1797
+
+C  blank handled inconsistently
+      All gates passed.
+
+D  two plates' labels swapped
+      [provenance] 14 well(s) disagree with the sample sheet: ['B1', 'B2', 'B3', 'B5']

@@ -1,0 +1,33 @@
+# Minimum versions for the code in this repository.
+#
+# Every package here is imported by something under builds/. Nothing is
+# listed speculatively. The minimums are the versions the builds were
+# actually verified against on 2026-09-18, recorded in TOOLING.md.
+#
+# These are floors, not pins. requirements.lock.txt holds the exact
+# environment if you need to reproduce the recorded output precisely.
+#
+# Install with:
+#     python -m pip install -r requirements.txt
+
+# Used by 14 of the 17 builds. The backbone of nearly everything here.
+pandas>=3.0.6
+
+# Used by 9 builds.
+numpy>=2.5.3
+
+# Statistics, curve fitting and image work.
+# Chapters 10, 11, 12, 13 and 15.
+scipy>=1.18.1
+
+# Figure generation. Chapter 12 only.
+matplotlib>=3.11.2
+
+# Reads the messy plate-reader export. Chapter 4 only.
+openpyxl>=3.1.5
+
+# Inspects the rendered figure in the Chapter 12 gate.
+pillow>=12.3.0
+
+# Reads the versioned screening criteria. Chapter 9 only.
+pyyaml>=6.0.3

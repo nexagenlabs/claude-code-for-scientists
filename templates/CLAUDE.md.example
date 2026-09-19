@@ -1,0 +1,55 @@
+# U87 TMZ/NanA synergy project
+
+## What this project is
+Combination cytotoxicity of temozolomide and nanaomycin A in U87MG
+glioblastoma cells. MTT endpoint at 48 h and 72 h, four replicate plates
+per time point, followed by an RT-PCR expression panel.
+
+## Data layout
+- `data/raw/` is read only. Never write to it, never edit a file in it,
+  never offer to tidy one. If a raw file is wrong, we note it, we do not
+  correct it.
+- `data/clean/` holds outputs of `scripts/clean_*.py`. Everything here is
+  regenerable and nothing here is edited by hand.
+- `scripts/` holds the pipeline. Every cleaning script has a matching
+  `gate_*.py` beside it.
+- `figures/` is regenerated from scripts. Nothing is tuned by hand.
+
+## Instrument exports
+- SpectraCount MX-200 exports carry four preamble rows. The header is on
+  row 6 and row 7 holds units, not data.
+- A real well ID matches `[A-H]` followed by one or two digits. Anything
+  else in the Well column is a footer row.
+- The reader writes `OVER` when a well saturates and `<0.010` when a
+  reading falls below threshold. Both are findings. Never coerce either
+  to a blank.
+- Some readings arrive as text rather than numbers. Parse explicitly.
+
+## Units and naming
+- Absorbance is at 595 nm. Column name `od595`, never `OD` or `abs`.
+- Concentrations are micromolar. Column name `conc_uM`. If a file gives
+  nanomolar, convert and say so in the output, do not mix.
+- Time is in hours. Column name `time_h`, integer.
+- Sample IDs appear as `U87_1`, `u87-1` and `U87 1`. Canonical form is
+  `U87_<n>`. If an ID does not match that pattern, do not guess: flag it.
+- Treatments are exactly: blank, DMSO, TMZ, NanA, TMZ+NanA.
+
+## Rules for any analysis in this project
+- Never use `errors='coerce'`. Parse explicitly and record what failed.
+- Never drop a row silently. A row is either carried through or written
+  to an exclusions file with a reason column.
+- Do not aggregate unless the task asks for it. Cleaning means one row
+  per well, not a mean.
+- Blank wells are excluded from treatment statistics, never averaged in.
+- Report effect sizes with confidence intervals, not p-values alone.
+
+## Before you tell me a task is done
+- The matching `gate_*.py` must run and pass.
+- Print counts: rows in, rows kept, rows excluded. They must reconcile.
+- If you changed a script, say which gate you ran and what it printed.
+
+## Things that have gone wrong before
+- A units row read as data, which shifted every dtype in the frame.
+- A silent `coerce` that dropped two saturated wells and changed a mean.
+- A time column parsed as text, so a gate compared strings and passed
+  for the wrong reason.

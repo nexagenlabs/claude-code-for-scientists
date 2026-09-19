@@ -1,0 +1,14 @@
+$ python naive.py
+means the agent reported:
+compound
+NanA         1201.0
+TMZ         99106.0
+TMZ+NanA    25523.0
+
+$ python gated.py
+Traceback (most recent call last):
+  File "gated.py", line 4, in <module>
+    assert both['unit'].nunique() == 1, f"mixed units: {sorted(both['unit'].unique())}"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: mixed units: ['nM', 'uM']
+(exit status 1)

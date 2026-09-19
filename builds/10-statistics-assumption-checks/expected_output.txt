@@ -1,0 +1,37 @@
+$ python make_mtt.py
+36 wells, 4 plates, 3 conditions
+            mean   std
+treatment             
+DMSO       99.44  7.73
+TMZ_100    86.41  7.37
+TMZ_50     92.68  7.71
+
+$ python panel.py
+  gene  p_raw  rank     bh
+  EZH1 0.0133     1 0.1596
+  pTEN 0.1509     2 0.9054
+DNMT3A 0.2401     3 0.9559
+   p21 0.3226     4 0.9559
+  EZH2 0.6004     5 0.9559
+  MGMT 0.6175     6 0.9559
+  MLH1 0.6778     7 0.9559
+   p53 0.7766     8 0.9559
+ TUSC7 0.8414     9 0.9559
+  MSH3 0.9138    10 0.9559
+DNMT3B 0.9546    11 0.9559
+ NEAT1 0.9559    12 0.9559
+
+raw p < 0.05:            1 of 12 genes
+after BH correction:     0 of 12 genes
+expected by chance:      0.6 genes
+
+$ python pseudorep.py
+wells as n      n = 12 vs 12   t =  2.144   p = 0.0433
+plates as n     n = 4 vs 4   t = 10.348   p = 0.0019
+
+effect: 6.76 percentage points lower with TMZ 50 uM, 95% CI 4.68 to 8.84
+
+$ python false_positive_rate.py
+4000 simulated experiments with no real treatment effect
+  wells counted as n   significant at p < 0.05 in  36.5 per cent
+  plates counted as n  significant at p < 0.05 in   2.6 per cent

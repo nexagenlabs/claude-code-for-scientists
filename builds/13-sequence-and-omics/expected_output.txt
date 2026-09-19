@@ -1,0 +1,61 @@
+$ python make_counts.py
+20000 genes, 6 libraries, 200 truly changed
+library sizes (millions): 3.9, 3.5, 4.6, 11.8, 4.5, 4.0
+
+$ python de.py
+1. THE INVARIANT: most genes did not change, so the median
+   log fold change across all genes should be about zero.
+
+   raw counts             median LFC +0.471
+   counts per million     median LFC -0.081
+
+2. THE SCALE: 20,000 tests at once.
+
+   genes tested                 19996
+   raw p < 0.05                  2503   expected by chance 1000
+   after BH correction              0
+   of which genuinely changed       0   out of 200 that were
+
+$ python filtering.py
+  min counts   genes tested   smallest q
+           0          19996       0.0942
+           1          19996       0.0942
+           5          19926       0.0938
+          10          19780       0.0931
+          50          18159       0.0855
+
+The same gene, ENSG00003451, is the strongest hit at every threshold.
+Its adjusted p-value depends entirely on how many other genes
+were left in the table beside it.
+
+$ python annotation.py
+counts rows        2000
+annotation rows    2000
+after the join     0
+
+after stripping the version suffix   2000 of 2000 matched
+
+Gate: a join must not lose rows unless you said it could.
+  rows in 2000, rows out 0, lost 2000
+
+$ python confound.py
+The treatment does nothing in this dataset. Not one gene was changed.
+  genes tested           19995
+  raw p < 0.05            2385
+  after BH correction        0
+
+Every one of those is the batch. The design cannot tell the
+difference, because every control was run on day one and every
+treated sample on day two.
+
+$ python read_accounting.py
+sample             raw    assigned    rate
+ctrl_1      22,400,000  15,568,001   69.5%
+ctrl_2      20,100,000  13,969,500   69.5%
+ctrl_3      24,800,000   8,804,001   35.5%
+treat_1     61,200,000  42,534,000   69.5%
+treat_2     23,900,000  16,610,501   69.5%
+treat_3     21,700,000  15,081,501   69.5%
+
+[qc] ctrl_3: only 35.5 per cent of reads assigned to a feature
+(exit status 1)

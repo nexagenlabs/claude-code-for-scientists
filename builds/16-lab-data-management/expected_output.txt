@@ -1,0 +1,32 @@
+$ python manifest.py
+manifest written for 2 files
+
+$ python manifest.py --check
+  all 2 files match the manifest
+
+$ python identifiers.py
+Chance that two samples share an identifier
+                            scheme       space   at 500  at 5000
+     initials + date, e.g. ST-1103      246,740    39.7%   100.0%
+            three digits, e.g. 047        1,000   100.0%   100.0%
+           four letters, e.g. QKZM      456,976    23.9%   100.0%
+          eight hex, e.g. 3f9a17c24,294,967,296     0.0%     0.3%
+
+A check digit on a seven-digit identifier catches
+  single wrong digit      100.0 per cent of the time
+  two digits swapped       87.9 per cent of the time
+
+$ python audit_log.py
+when              who  prev      hash      what
+2026-03-11 09:14  ST   00000000  adcc8ca5  plate P1 seeded, U87MG p12
+2026-03-11 09:40  ST   adcc8ca5  179d2cde  TMZ dilution series prepared, 50 and 100 uM
+2026-03-13 10:02  ST   179d2cde  37b6b796  MTT read at 48 h, plate P1
+2026-03-13 10:20  RK   37b6b796  0299cdb7  well B4 flagged saturated, excluded
+2026-03-14 16:31  ST   0299cdb7  d7ed2494  analysis v1 committed, gate passed
+
+verify: intact
+
+after editing entry 4 in place:
+verify: BROKEN at entry 4
+Every later entry's hash was computed from the original text,
+so changing one line invalidates everything after it.

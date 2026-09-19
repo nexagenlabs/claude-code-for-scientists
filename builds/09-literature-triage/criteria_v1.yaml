@@ -1,0 +1,7 @@
+# Screening criteria, version 1. Committed, and cited in the methods.
+include_all_of:
+  drug_class: [ivermectin, avermectin, selamectin, moxidectin]
+  model_is_cancer: [carcinoma, glioblastoma, "cancer cells", HepG2, Huh7, U87MG, MCF-7]
+  mechanism_stated: [activation, inhibition, depolarisation, downregulation, signalling]
+exclude_if_any_of:
+  wrong_population: ["healthy volunteers", "mass drug administration"]
