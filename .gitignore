@@ -23,6 +23,10 @@ builds/**/figure_*.png
 # Generated site. Rebuild with: python site/build_site.py
 site/dist/
 
+# Stress harness output. Regenerate with:
+#     python .build/stress_test.py
+stress_report*.txt
+
 # Editors and operating systems
 .DS_Store
 Thumbs.db
