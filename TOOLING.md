@@ -21,7 +21,7 @@ than that, and is the failure this file exists to prevent.
 | Fact | Value | How it was checked |
 |---|---|---|
 | Version | `2.1.276 (Claude Code)` | `claude --version` on 2026-09-18 |
-| Installed via | npm, global | `C:\Users\surya\AppData\Roaming\npm\claude.ps1` |
+| Installed via | npm, global | `%APPDATA%\npm\claude.ps1` |
 
 Every chapter that names a command should say "current form in
 TOOLING.md" rather than promising the printed form is still correct.
@@ -50,8 +50,8 @@ Other interpreters present, none of which carried the scientific stack:
 
 | Version | Location |
 |---|---|
-| 3.12.10 | `C:\Users\surya\AppData\Local\Programs\Python\Python312\python.exe` |
-| 3.10 | `C:\Users\surya\AppData\Local\Programs\Python\Python310\python.exe` |
+| 3.12.10 | `%LOCALAPPDATA%\Programs\Python\Python312\python.exe` |
+| 3.10 | `%LOCALAPPDATA%\Programs\Python\Python310\python.exe` |
 
 ---
 
